@@ -401,3 +401,22 @@ if (carousel) {
         }
     }, 3000);
 }
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+}
+
+// Add this to your window load event
+window.addEventListener('load', () => {
+    // Dark mode initialization
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+
+    // Add dark mode toggle button dynamically
+    const darkModeToggle = document.createElement('div');
+    darkModeToggle.innerHTML = '<button id="darkModeToggle" class="btn" style="position:fixed;bottom:100px;right:30px;z-index:1000;">🌓</button>';
+    document.body.appendChild(darkModeToggle);
+    
+    document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+});
