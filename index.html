@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-    <header id="home">
+    <!-- In your header section (index.html) -->
+<header style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+url('https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=1200&q=80') 
+no-repeat center center/cover;">
         <h1 class="logo">
             <img src="static/images/A.png" alt="سكر" class="logo-img">
             <span id="dynamicLogo">سكر</span>
@@ -27,7 +30,6 @@
                 <li><a href="#home">الصفحة الرئيسية</a></li>
                 <li><a href="#about">حولنا</a></li>
                 <li><a href="#categories">الأصناف</a></li>
-                <li><a href="#weekly-specials">حلويات الأسبوع</a></li>
                 <li><a href="#gallery">معرض الصور</a></li>
                 <li><a href="#contact">تواصل معنا</a></li>
             </ul>
@@ -410,74 +412,6 @@
         </section>
     </div>
     
-    <section id="builder" class="container">
-        <h2 class="section-title"> الطلب التفاعلي</h2>
-        <div class="builder-container">
-            <p>استخدم أداة السحب والإفلات لإنشاء طلبك المخصص. اسحب الحلويات التي تريدها إلى منطقة الطلب وشاهد السعر يتغير تلقائيًا.</p>
-            
-            <div class="builder-area">
-                <div class="builder-items" id="builderItems">
-                    <div class="builder-item" draggable="true" data-price="1200">مقروط</div>
-                    <div class="builder-item" draggable="true" data-price="1500">بقلوّة</div>
-                    <div class="builder-item" draggable="true" data-price="1000">غريبة</div>
-                    <div class="builder-item" draggable="true" data-price="2000">تشيز كيك</div>
-                    <div class="builder-item" draggable="true" data-price="250">ماكورون</div>
-                    <div class="builder-item" draggable="true" data-price="500">ميني كيك</div>
-                </div>
-                
-                <div class="builder-preview" id="builderPreview">
-                    <p>اسحب الحلويات هنا لإنشاء طلبك</p>
-                </div>
-            </div>
-            
-            <div class="builder-total">
-                المجموع: <span id="builderTotal">0</span> دج
-            </div>
-            
-            <div class="text-center" style="margin-top: 20px;">
-                <button class="btn" onclick="submitBuilderOrder()">إتمام الطلب</button>
-            </div>
-        </div>
-    </section>
-    
-    <section id="greeting-card" class="container">
-        <h2 class="section-title"> بطاقة معايدة</h2>
-        <div class="greeting-card-container">
-            <p>أضف لمسة شخصية لطلبك! اكتب اسم من تحب أو رسالة معايدة وسنرسلها مع طلبك.</p>
-            
-            <div class="form-group">
-                <label for="greetingText">النص المخصص</label>
-                <input type="text" id="greetingText" placeholder="مثال: رمضان كريم، أو تهنئة للعروسين">
-            </div>
-            
-            <div class="greeting-card-preview">
-                <div class="greeting-card-text" id="greetingCardPreview">
-                    نص المعايدة سيظهر هنا
-                </div>
-            </div>
-            
-            <div class="text-center" style="margin-top: 20px;">
-                <button class="btn" onclick="saveGreetingCard()">حفظ البطاقة مع الطلب</button>
-            </div>
-        </div>
-    </section>
-    
-    <section id="video-order" class="container">
-        <h2 class="section-title">طلب عبر الفيديو</h2>
-        <div class="video-order-container">
-            <p>لا تفضل الكتابة؟ يمكنك تسجيل فيديو قصير لشرح طلبك وسنتصل بك لتأكيد التفاصيل.</p>
-            
-            <div class="video-preview" id="videoPreview">
-                <div class="placeholder">سيظهر الفيديو المسجل هنا</div>
-            </div>
-            
-            <div style="margin-top: 20px;">
-                <button class="btn btn-video-order" id="startRecording">سجّل طلبك صوت أو فيديو 🎥</button>
-                <button class="btn" id="sendVideo" style="display:none;">إرسال الفيديو</button>
-            </div>
-        </div>
-    </section>
-    
     <section id="ai-chat" class="container">
         <h2 class="section-title">مساعد حلوياتنا الذكي</h2>
         <div class="ai-chat-container">
@@ -523,23 +457,7 @@
             </div>
         </div>
     </section>
-    
-    <section id="contact" class="container">
-        <h2 class="section-title">تواصل معنا</h2>
-        <div class="contact-info">
-            <div class="contact-card">
-                <h3>معلومات التواصل</h3>
-                <p>البريد الإلكتروني: info@halawiyatna.com</p>
-                
-                <div class="social-links">
-                    <a href="https://wa.me/213781648033"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+  
     <div id="orderModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
@@ -583,39 +501,21 @@
         </div>
     </div>
 
-    <!-- Video Modal -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeVideoModal()">&times;</span>
-            <h2 class="section-title" id="videoModalTitle">فيديو تعليمي</h2>
-            <div class="video-container">
-                <video id="tutorialVideo" controls style="width:100%;">
-                    <source src="" type="video/mp4">
-                    متصفحك لا يدعم تشغيل الفيديو.
-                </video>
-            </div>
-        </div>
-    </div>
-    
     <a href="https://wa.me/213781648033" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
     
-    <footer>
+    <footer style="margin-top: 0;">
         <div class="container">
             <div class="footer-logo">
                 <img src="static/images/A.png" alt="شعار حلوياتنا" class="footer-logo-img">
-                حلوياتنا
+                سكر
             </div>
-            <ul class="footer-links">
-                <li><a href="#home">الصفحة الرئيسية</a></li>
-                <li><a href="#about">حولنا</a></li>
-                <li><a href="#categories">الأصناف</a></li>
-                <li><a href="#weekly-specials">حلويات الأسبوع</a></li>
-                <li><a href="#gallery">معرض الصور</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
-            </ul>
-            <p class="copyright">© 2025 حلوياتنا. جميع الحقوق محفوظة.</p>
+            <div class="footer-content">
+                <p>حلويات تقليدية وعصرية بنكهات لا تُنسى!</p>
+                <p>تواصل معنا على الواتساب: 213781648033</p>
+            </div>
+            <p class="copyright">© 2025 سكر. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
     
@@ -623,6 +523,25 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     
+    <script>
+        // Dynamic background image loader
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const backgrounds = [
+                'url("https://images.unsplash.com/photo-1517686469429-8bdb88b9f907")',
+                'url("https://images.unsplash.com/photo-1563805042-7684c019e1cb")',
+                'url("https://images.unsplash.com/photo-1551024506-0bccd828d307")',
+                'url("https://images.unsplash.com/photo-1562440499-64c9a111f713")'
+            ];
+            
+            sections.forEach((section, index) => {
+                section.style.background = `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), ${backgrounds[index % backgrounds.length]}`;
+                section.style.backgroundSize = 'cover';
+                section.style.backgroundPosition = 'center';
+                section.style.backgroundAttachment = 'fixed';
+            });
+        });
+    </script>
     <script src="static/js/script.js"></script>
 </body>
 </html>
