@@ -3,950 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حلوياتنا - حلويات تقليدية وعصرية</title>
+    <title>سكر</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="manifest" href="manifest.json">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
-            transition: background-color 0.3s, color 0.3s, transform 0.3s, opacity 0.3s;
-        }
-        
-        :root {
-            --primary-color: #d4a373;
-            --secondary-color: #5a3e2b;
-            --text-color: #5a3e2b;
-            --bg-color: #fff9f5;
-            --card-bg: white;
-            --nav-bg: white;
-            --footer-bg: #5a3e2b;
-            --shadow: 0 5px 15px rgba(0,0,0,0.1);
-            --glass-bg: rgba(255, 255, 255, 0.2);
-            --glass-border: 1px solid rgba(255, 255, 255, 0.3);
-            --gradient-bg: linear-gradient(to right, #1b1b1b, #7f4f24, #d4a373);
-        }
-        
-        .dark-mode {
-            --primary-color: #f8ad47;
-            --secondary-color: #e0c9b8;
-            --text-color: #e0c9b8;
-            --bg-color: #1a1a1a;
-            --card-bg: #2d2d2d;
-            --nav-bg: #252525;
-            --footer-bg: #121212;
-            --shadow: 0 5px 15px rgba(0,0,0,0.3);
-            --glass-bg: rgba(0, 0, 0, 0.2);
-            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-            --gradient-bg: linear-gradient(to right, #121212, #432818, #99582a);
-        }
-        
-        .pink-theme {
-            --primary-color: #f06292;
-            --secondary-color: #c2185b;
-            --gradient-bg: linear-gradient(to right, #f8cdda, #f06292);
-        }
-        
-        .ramadan-theme {
-            --primary-color: #ffb627;
-            --secondary-color: #99582a;
-            --gradient-bg: linear-gradient(to right, #432818, #99582a, #ffb627);
-        }
-        
-        .neutral-theme {
-            --primary-color: #a68a64;
-            --secondary-color: #2d2d2d;
-            --gradient-bg: linear-gradient(to right, #1f1f1f, #2d2d2d, #a68a64);
-        }
-        
-        .fresh-theme {
-            --primary-color: #6ec5d9;
-            --secondary-color: #2a7886;
-            --gradient-bg: linear-gradient(to right, #ffffff, #d3f4ff, #6ec5d9);
-        }
-        
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            scroll-behavior: smooth;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        header {
-            background: var(--gradient-bg), url('https://images.unsplash.com/photo-1551024506-0bccd828d307') no-repeat center center;
-            background-size: cover;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            animation: gradientShift 15s ease infinite;
-            background-size: 200% 200%;
-        }
-        
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .logo {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            animation: fadeInDown 1s ease;
-        }
-        
-        .logo-img {
-            width: 50px;
-            height: 50px;
-            margin-left: 10px;
-            animation: pulse 2s infinite;
-        }
-        
-        .slogan {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-            animation: fadeInUp 1s ease 0.3s both;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-        
-        .btn-video-order {
-            background-color: #ff4d4d;
-            animation: pulseGlow 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 77, 77, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
-        }
-        
-        nav {
-            background-color: var(--nav-bg);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            animation: slideInDown 0.5s ease;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-right: 20px;
-            position: relative;
-        }
-        
-        .nav-links li::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-links li:hover::after {
-            width: 100%;
-            right: auto;
-            left: 0;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .theme-toggle {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: var(--glass-border);
-            border-radius: 30px;
-            padding: 8px 15px;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            margin-left: 20px;
-        }
-        
-        .theme-toggle i {
-            margin-left: 8px;
-        }
-        
-        section {
-            padding: 80px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2rem;
-            color: var(--text-color);
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-            margin: 15px auto;
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            line-height: 1.8;
-        }
-        
-        .about-img {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transform: perspective(1000px) rotateY(-10deg);
-            transition: transform 0.5s ease;
-        }
-        
-        .about-img:hover {
-            transform: perspective(1000px) rotateY(0deg);
-        }
-        
-        .about-img img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .category-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .category-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .category-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .category-card:hover .category-img img {
-            transform: scale(1.1);
-        }
-        
-        .category-content {
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .category-content h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            color: var(--text-color);
-        }
-        
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .product-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .product-img {
-            height: 250px;
-            overflow: hidden;
-        }
-        
-        .product-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .product-card:hover .product-img img {
-            transform: scale(1.05);
-        }
-        
-        .product-content {
-            padding: 20px;
-        }
-        
-        .product-content h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            color: var(--text-color);
-        }
-        
-        .product-content p {
-            margin-bottom: 15px;
-            color: var(--text-color);
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-        
-        .product-price {
-            font-weight: 700;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        .order-form {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            max-width: 800px;
-            margin: 0 auto;
-            backdrop-filter: blur(10px);
-            background: var(--glass-bg);
-            border: var(--glass-border);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-color);
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            border-color: var(--primary-color);
-        }
-        
-        .form-group textarea {
-            min-height: 100px;
-        }
-        
-        .builder-container {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            margin-bottom: 40px;
-        }
-        
-        .builder-area {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        
-        .builder-items {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 15px;
-        }
-        
-        .builder-preview {
-            flex: 1;
-            min-height: 300px;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 20px;
-            position: relative;
-            border: 2px dashed var(--primary-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .builder-item {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            cursor: grab;
-            user-select: none;
-            transition: transform 0.2s;
-        }
-        
-        .builder-item:active {
-            cursor: grabbing;
-            transform: scale(1.05);
-        }
-        
-        .builder-preview-item {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            display: inline-block;
-            position: relative;
-        }
-        
-        .builder-preview-item .remove-item {
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            background: red;
-            color: white;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            cursor: pointer;
-        }
-        
-        .builder-total {
-            font-size: 1.5rem;
-            text-align: center;
-            margin-top: 20px;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-        
-        .greeting-card-container {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            margin-bottom: 40px;
-        }
-        
-        .greeting-card-preview {
-            width: 100%;
-            max-width: 500px;
-            height: 300px;
-            margin: 20px auto;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .greeting-card-text {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #333;
-            text-align: center;
-            z-index: 2;
-            padding: 20px;
-        }
-        
-        .greeting-card-preview::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
-            z-index: 1;
-        }
-        
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            overflow: hidden;
-            border-radius: 10px;
-            position: relative;
-            transition: transform 0.3s;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.02);
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .video-order-container {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .video-preview {
-            width: 100%;
-            max-width: 500px;
-            height: 300px;
-            margin: 20px auto;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .video-preview video {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        
-        .video-preview .placeholder {
-            font-size: 1.2rem;
-            color: #666;
-        }
-        
-        .ai-chat-container {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            margin-bottom: 40px;
-        }
-        
-        .ai-chat-box {
-            height: 300px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            overflow-y: auto;
-            background-color: rgba(255,255,255,0.1);
-        }
-        
-        .ai-message {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 20px 20px 0 20px;
-            margin-bottom: 10px;
-            display: inline-block;
-            max-width: 80%;
-            float: right;
-            clear: both;
-        }
-        
-        .user-message {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 20px 20px 20px 0;
-            margin-bottom: 10px;
-            display: inline-block;
-            max-width: 80%;
-            float: left;
-            clear: both;
-        }
-        
-        .ai-chat-input {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .ai-chat-input input {
-            flex: 1;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            font-size: 1rem;
-        }
-        
-        .fomo-banner {
-            background: linear-gradient(45deg, #ff4d4d, #f9cb28);
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 30px;
-            animation: pulseGlow 2s infinite;
-        }
-        
-        .counter {
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(10px);
-            background: var(--glass-bg);
-            border: var(--glass-border);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-        
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 99;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-        
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        footer {
-            background-color: var(--footer-bg);
-            color: white;
-            padding: 50px 0 20px;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .footer-logo-img {
-            width: 40px;
-            height: 40px;
-            margin-left: 10px;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        
-        .footer-links li {
-            margin: 0 15px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        .copyright {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.7);
-            z-index: 1000;
-            overflow-y: auto;
-        }
-        
-        .modal-content {
-            background-color: var(--card-bg);
-            margin: 5% auto;
-            padding: 30px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 600px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-            position: relative;
-            animation: modalFadeIn 0.3s ease;
-        }
-        
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--text-color);
-        }
-        
-        .color-picker {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: var(--glass-border);
-            border-radius: 10px;
-            padding: 15px;
-            z-index: 99;
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .color-options {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .color-option {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid white;
-            transition: transform 0.2s;
-        }
-        
-        .color-option:hover {
-            transform: scale(1.1);
-        }
-        
-        .style-toggle {
-            position: fixed;
-            bottom: 160px;
-            right: 30px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: var(--glass-border);
-            border-radius: 10px;
-            padding: 10px 15px;
-            z-index: 99;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        .style-toggle:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-            }
-            
-            .nav-links {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            header {
-                height: 60vh;
-            }
-            
-            .logo {
-                font-size: 2rem;
-            }
-            
-            .slogan {
-                font-size: 1.2rem;
-            }
-            
-            .theme-toggle {
-                margin: 15px auto 0;
-            }
-            
-            .modal-content {
-                margin: 20px auto;
-                width: 95%;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .builder-area {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
     <header id="home">
         <h1 class="logo">
-            <img src="A.png" alt="شعار حلوياتنا" class="logo-img">
-            <span id="dynamicLogo">حلوياتنا</span>
+            <img src="static/images/A.png" alt="سكر" class="logo-img">
+            <span id="dynamicLogo">سكر</span>
         </h1>
         <p class="slogan">حلويات تقليدية وعصرية بنكهات لا تُنسى!</p>
         <a href="#categories" class="btn">شاهد تشكيلتنا</a>
@@ -955,21 +21,17 @@
     <nav>
         <div class="container nav-container">
             <div class="logo">
-                <img src="A.png" alt="شعار حلوياتنا" class="logo-img">
-                حلوياتنا
+                <img src="static/images/A.png" alt="شعار حلوياتنا" class="logo-img">
+                سكر
             </div>
             <ul class="nav-links">
                 <li><a href="#home">الصفحة الرئيسية</a></li>
                 <li><a href="#about">حولنا</a></li>
                 <li><a href="#categories">الأصناف</a></li>
+                <li><a href="#weekly-specials">حلويات الأسبوع</a></li>
                 <li><a href="#gallery">معرض الصور</a></li>
-                <li><a href="#testimonials">شهادات العملاء</a></li>
                 <li><a href="#contact">تواصل معنا</a></li>
             </ul>
-            <div class="theme-toggle" id="themeToggle">
-                <span>الوضع الليلي</span>
-                <i class="fas fa-moon"></i>
-            </div>
         </div>
     </nav>
     
@@ -982,7 +44,7 @@
     </div>
     
     <section id="about" class="container">
-        <h2 class="section-title">حول حلوياتنا</h2>
+        <h2 class="section-title">حول سكر</h2>
         <div class="about-content">
             <div class="about-text">
                 <p>نحن عائلة جزائرية مختصة في تحضير الحلويات التقليدية والعصرية منذ أكثر من 10 سنوات. بدأنا مشوارنا بحب وشغف للحلويات الأصيلة التي توارثناها عن أجدادنا، وطورناها لتتناسب مع الأذواق العصرية.</p>
@@ -990,16 +52,94 @@
                 <p>كل قطعة حلوة نقدمها تحمل بين طياتها حبنا لهذا العمل وحرصنا على إرضاء ذوقكم. نقدم تشكيلة واسعة من الحلويات المناسبة لكل المناسبات من أعراس، أعياد، ومناسبات خاصة.</p>
             </div>
             <div class="about-img">
-                <img src="family.jpg" alt="عائلة حلوياتنا">
+                <img src="static/images/family.jpeg" alt="عائلة حلوياتنا">
             </div>
         </div>
     </section>
+    <!-- Surprise Box Section -->
+    <section id="surprise" class="container">
+        <div class="surprise-section">
+            <h3 class="surprise-title">🎁 صندوق المفاجآت</h3>
+            <p>مع كل طلب فوق 2000 دج، نرسل لك هدية مفاجئة من اختيارنا!</p>
+            <p>"هدية منّا ❤️ لتذوق المزيد من أطايبنا"</p>
+        </div>
+    </section>
+
+    <!-- Video Tutorials Section -->
+    <section id="tutorials" class="container">
+        <h2 class="section-title">فيديوهات تعليمية</h2>
+        <p>تعلم كيفية تحضير بعض الحلويات التقليدية مع أمّنا المختصة</p>
+        
+        <div class="video-tutorials">
+            <div class="video-tutorial">
+                <div class="video-tutorial-thumbnail">
+                    <img src="static/images/1.1.jpeg" alt="فيديو تعليمي">
+                    <div class="video-tutorial-play" onclick="openVideoModal('مقروط')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-tutorial-content">
+                    <h3>كيفية تحضير المقروط</h3>
+                    <p>شاهد طريقة تحضير المقروط التقليدي في 30 ثانية</p>
+                </div>
+            </div>
+            
+            <div class="video-tutorial">
+                <div class="video-tutorial-thumbnail">
+                    <img src="static/images/2.1.jpeg" alt="فيديو تعليمي">
+                    <div class="video-tutorial-play" onclick="openVideoModal('بقلوّة')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-tutorial-content">
+                    <h3>كيفية تحضير البقلوّة</h3>
+                    <p>تعلم أسرار تحضير البقلوّة الهشة والشهية</p>
+                </div>
+            </div>
+            
+            <div class="video-tutorial">
+                <div class="video-tutorial-thumbnail">
+                    <img src="static/images/3.1.jpeg" alt="فيديو تعليمي">
+                    <div class="video-tutorial-play" onclick="openVideoModal('غريبة')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-tutorial-content">
+                    <h3>كيفية تحضير الغريبة</h3>
+                    <p>وصفة الغريبة الهشة كما تحضرها أمّنا</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Story Section -->
+    <section id="story" class="container">
+        <h2 class="section-title">قصتنا العائلية</h2>
+        <div class="story-section">
+            <div class="story-image">
+                <img src="static/images/mother.jpg" alt="أمّنا">
+            </div>
+            <div class="story-content">
+                <h2>وصفات توارثناها عن أمّنا</h2>
+                <p>كل وصفة من وصفاتنا تحمل قصة وحكاية. بدأت رحلتنا مع الحلويات منذ الطفولة، حيث كنا نراقب أمّنا وهي تحضر أطيب الحلويات في المناسبات والأعياد.</p>
+                <p>تعلمنا منها أن سر الحلويات اللذيذة يكمن في ثلاثة أشياء: المكونات الطازجة، الحب الذي يوضع في التحضير، والصبر لتحقيق الكمال.</p>
+                
+                <div class="story-quote">
+                    "الحلويات ليست مجرد مذاق، بل هي ذكريات تبقى في القلب. أحرص دائمًا على أن تكون حلوياتي نابعة من القلب، لأن هذا سر تميزها"
+                    <br><br>- أمّنا فاطمة
+                </div>
+                
+                <p>اليوم، نواصل هذه التقاليد العائلية بنفس الروح والحب، مع إضافة لمسات عصرية تلبي أذواق الجميع.</p>
+            </div>
+        </div>
+    </section>
+    
     <section id="categories" class="container">
         <h2 class="section-title">أصناف الحلويات</h2>
         <div class="categories">
             <div class="category-card" onclick="showProducts('traditional')">
                 <div class="category-img">
-                    <img src="traditional.jpg" alt="حلويات تقليدية">
+                    <img src="static/images/old.jpg" alt="حلويات تقليدية">
                 </div>
                 <div class="category-content">
                     <h3>حلويات تقليدية</h3>
@@ -1009,7 +149,7 @@
             
             <div class="category-card" onclick="showProducts('modern')">
                 <div class="category-img">
-                    <img src="modern.jpg" alt="حلويات عصرية">
+                    <img src="static/images/new.jpeg" alt="حلويات عصرية">
                 </div>
                 <div class="category-content">
                     <h3>حلويات عصرية</h3>
@@ -1019,7 +159,7 @@
             
             <div class="category-card" onclick="showProducts('wedding')">
                 <div class="category-img">
-                    <img src="wedding.jpg" alt="حلويات الأعراس">
+                    <img src="static/images/weding.jpg" alt="حلويات الأعراس">
                 </div>
                 <div class="category-content">
                     <h3>حلويات الأعراس</h3>
@@ -1029,7 +169,7 @@
             
             <div class="category-card" onclick="showProducts('ramadan')">
                 <div class="category-img">
-                    <img src="ramadan.jpg" alt="حلويات رمضان">
+                    <img src="static/images/ramadan.jpg" alt="حلويات رمضان">
                 </div>
                 <div class="category-content">
                     <h3>حلويات رمضان</h3>
@@ -1039,7 +179,7 @@
             
             <div class="category-card" onclick="showProducts('gateau')">
                 <div class="category-img">
-                    <img src="gateau.jpg" alt="قـاطو الطابع">
+                    <img src="static/images/tabe3.jpeg" alt="قـاطو الطابع">
                 </div>
                 <div class="category-content">
                     <h3>قـاطو الطابع</h3>
@@ -1049,7 +189,7 @@
             
             <div class="category-card" onclick="showProducts('mini')">
                 <div class="category-img">
-                    <img src="mini.jpg" alt="ميني طورطات">
+                    <img src="static/images/tortat.jpg" alt="ميني طورطات">
                 </div>
                 <div class="category-content">
                     <h3>ميني طورطات</h3>
@@ -1059,7 +199,7 @@
             
             <div class="category-card" onclick="showProducts('kids')">
                 <div class="category-img">
-                    <img src="kids.jpg" alt="حلويات للأطفال">
+                    <img src="static/images/kids.jpeg" alt="حلويات للأطفال">
                 </div>
                 <div class="category-content">
                     <h3>حلويات خاصة للأطفال</h3>
@@ -1069,7 +209,7 @@
             
             <div class="category-card" onclick="openOrderModal('طلب خاص')">
                 <div class="category-img">
-                    <img src="custom.jpg" alt="طلب خاص">
+                    <img src="static/images/special.jpeg" alt="طلب خاص">
                 </div>
                 <div class="category-content">
                     <h3>طلب خاص</h3>
@@ -1085,7 +225,7 @@
             <div class="products">
                 <div class="product-card" onclick="openOrderModal('مقروط')">
                     <div class="product-img">
-                        <img src="makrout.jpg" alt="مقروط">
+                        <img src="static/images/gateau2.jpg" alt="مقروط">
                     </div>
                     <div class="product-content">
                         <h3>مقروط</h3>
@@ -1097,7 +237,7 @@
                 
                 <div class="product-card" onclick="openOrderModal('بقلوّة')">
                     <div class="product-img">
-                        <img src="baklawa.jpg" alt="بقلوّة">
+                        <img src="static/images/7.jpeg" alt="بقلوّة">
                     </div>
                     <div class="product-content">
                         <h3>بقلوّة</h3>
@@ -1109,7 +249,7 @@
                 
                 <div class="product-card" onclick="openOrderModal('غريبة')">
                     <div class="product-img">
-                        <img src="ghriba.jpg" alt="غريبة">
+                        <img src="static/images/5.jpeg" alt="غريبة">
                     </div>
                     <div class="product-content">
                         <h3>غريبة</h3>
@@ -1129,7 +269,7 @@
             <div class="products">
                 <div class="product-card" onclick="openOrderModal('تشيز كيك')">
                     <div class="product-img">
-                        <img src="cheesecake.jpg" alt="تشيز كيك">
+                        <img src="static/images/chize.jpg" alt="تشيز كيك">
                     </div>
                     <div class="product-content">
                         <h3>تشيز كيك</h3>
@@ -1141,7 +281,7 @@
                 
                 <div class="product-card" onclick="openOrderModal('ماكورون')">
                     <div class="product-img">
-                        <img src="macaron.jpg" alt="ماكورون">
+                        <img src="static/images/macaron.jpeg" alt="ماكورون">
                     </div>
                     <div class="product-content">
                         <h3>ماكورون</h3>
@@ -1161,7 +301,7 @@
             <div class="products">
                 <div class="product-card" onclick="openOrderModal('سفرة العروس')">
                     <div class="product-img">
-                        <img src="wedding1.jpg" alt="سفرة العروس">
+                        <img src="static/images/sefra.jpg" alt="سفرة العروس">
                     </div>
                     <div class="product-content">
                         <h3>سفرة العروس</h3>
@@ -1173,7 +313,7 @@
                 
                 <div class="product-card" onclick="openOrderModal('كعكة الزفاف')">
                     <div class="product-img">
-                        <img src="wedding2.jpg" alt="كعكة الزفاف">
+                        <img src="static/images/zefaf.jpeg" alt="كعكة الزفاف">
                     </div>
                     <div class="product-content">
                         <h3>كعكة الزفاف</h3>
@@ -1193,7 +333,7 @@
             <div class="products">
                 <div class="product-card" onclick="openOrderModal('زلابية')">
                     <div class="product-img">
-                        <img src="zalabia.jpg" alt="زلابية">
+                        <img src="static/images/zelabya.jpeg" alt="زلابية">
                     </div>
                     <div class="product-content">
                         <h3>زلابية</h3>
@@ -1205,7 +345,7 @@
                 
                 <div class="product-card" onclick="openOrderModal('قريوش')">
                     <div class="product-img">
-                        <img src="griouch.jpg" alt="قريوش">
+                        <img src="static/images/4.jpg" alt="قريوش">
                     </div>
                     <div class="product-content">
                         <h3>قريوش</h3>
@@ -1225,7 +365,7 @@
             <div class="products">
                 <div class="product-card" onclick="openOrderModal('قاطو باللوز')">
                     <div class="product-img">
-                        <img src="gateau1.jpg" alt="قاطو باللوز">
+                        <img src="static/images/gateau1.jpg" alt="قاطو باللوز">
                     </div>
                     <div class="product-content">
                         <h3>قاطو باللوز</h3>
@@ -1237,7 +377,7 @@
                 
                 <div class="product-card" onclick="openOrderModal('قاطو بالسميد')">
                     <div class="product-img">
-                        <img src="gateau2.jpg" alt="قاطو بالسميد">
+                        <img src="static/images/gateau2.jpg" alt="قاطو بالسميد">
                     </div>
                     <div class="product-content">
                         <h3>قاطو بالسميد</h3>
@@ -1257,7 +397,7 @@
             <div class="products">
                 <div class="product-card" onclick="openOrderModal('ميني كيك شوكولاتة')">
                     <div class="product-img">
-                        <img src="mini1.jpg" alt="ميني كيك شوكولاتة">
+                        <img src="static/images/mini1.jpg" alt="ميني كيك شوكولاتة">
                     </div>
                     <div class="product-content">
                         <h3>ميني كيك شوكولاتة</h3>
@@ -1269,7 +409,7 @@
                 
                 <div class="product-card" onclick="openOrderModal('ميني كيك فانيليا')">
                     <div class="product-img">
-                        <img src="mini2.jpg" alt="ميني كيك فانيليا">
+                        <img src="static/images/mini2.jpg" alt="ميني كيك فانيليا">
                     </div>
                     <div class="product-content">
                         <h3>ميني كيك فانيليا</h3>
@@ -1289,7 +429,7 @@
             <div class="products">
                 <div class="product-card" onclick="openOrderModal('كيك شخصيات كرتونية')">
                     <div class="product-img">
-                        <img src="kids1.jpg" alt="كيك شخصيات كرتونية">
+                        <img src="static/images/kids1.jpg" alt="كيك شخصيات كرتونية">
                     </div>
                     <div class="product-content">
                         <h3>كيك شخصيات كرتونية</h3>
@@ -1301,7 +441,7 @@
                 
                 <div class="product-card" onclick="openOrderModal('كب كيك ملون')">
                     <div class="product-img">
-                        <img src="kids2.jpg" alt="كب كيك ملون">
+                        <img src="static/images/kids2.jpg" alt="كب كيك ملون">
                     </div>
                     <div class="product-content">
                         <h3>كب كيك ملون</h3>
@@ -1318,7 +458,7 @@
     </div>
     
     <section id="builder" class="container">
-        <h2 class="section-title">صانع الطلب التفاعلي</h2>
+        <h2 class="section-title"> الطلب التفاعلي</h2>
         <div class="builder-container">
             <p>استخدم أداة السحب والإفلات لإنشاء طلبك المخصص. اسحب الحلويات التي تريدها إلى منطقة الطلب وشاهد السعر يتغير تلقائيًا.</p>
             
@@ -1348,7 +488,7 @@
     </section>
     
     <section id="greeting-card" class="container">
-        <h2 class="section-title">مولّد بطاقة معايدة</h2>
+        <h2 class="section-title"> بطاقة معايدة</h2>
         <div class="greeting-card-container">
             <p>أضف لمسة شخصية لطلبك! اكتب اسم من تحب أو رسالة معايدة وسنرسلها مع طلبك.</p>
             
@@ -1401,149 +541,48 @@
         </div>
     </section>
     
-    <section id="order" class="container">
-        <h2 class="section-title">طلب الحلويات</h2>
-        <div class="order-form">
-            <form id="mainOrderForm" onsubmit="submitOrder(event)">
-                <div class="form-group">
-                    <label for="name">الاسم الكامل</label>
-                    <input type="text" id="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">رقم الهاتف</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="address">العنوان</label>
-                    <input type="text" id="address" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="product">نوع الحلويات</label>
-                    <select id="product" required>
-                        <option value="">اختر نوع الحلويات</option>
-                        <option value="مقروط">مقروط</option>
-                        <option value="بقلوّة">بقلوّة</option>
-                        <option value="غريبة">غريبة</option>
-                        <option value="كعْك النقاش">كعْك النقاش</option>
-                        <option value="صامصة">صامصة</option>
-                        <option value="تشيز كيك">تشيز كيك</option>
-                        <option value="ماكورون">ماكورون</option>
-                        <option value="سفرة العروس">سفرة العروس</option>
-                        <option value="كعكة الزفاف">كعكة الزفاف</option>
-                        <option value="زلابية">زلابية</option>
-                        <option value="قريوش">قريوش</option>
-                        <option value="قاطو باللوز">قاطو باللوز</option>
-                        <option value="قاطو بالسميد">قاطو بالسميد</option>
-                        <option value="ميني كيك شوكولاتة">ميني كيك شوكولاتة</option>
-                        <option value="ميني كيك فانيليا">ميني كيك فانيليا</option>
-                        <option value="كيك شخصيات كرتونية">كيك شخصيات كرتونية</option>
-                        <option value="كب كيك ملون">كب كيك ملون</option>
-                        <option value="حلويات تقليدية">حلويات تقليدية</option>
-                        <option value="حلويات عصرية">حلويات عصرية</option>
-                        <option value="حلويات الأعراس">حلويات الأعراس</option>
-                        <option value="حلويات رمضان">حلويات رمضان</option>
-                        <option value="قـاطو الطابع">قـاطو الطابع</option>
-                        <option value="ميني طورطات">ميني طورطات</option>
-                        <option value="حلويات للأطفال">حلويات للأطفال</option>
-                        <option value="طلب خاص">طلب خاص</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="quantity">الكمية</label>
-                    <input type="number" id="quantity" min="1" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="date">تاريخ التوصيل</label>
-                    <input type="date" id="date" min="2025-01-01" max="2025-12-31" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="notes">ملاحظات إضافية</label>
-                    <textarea id="notes"></textarea>
-                </div>
-                
-                <button type="submit" class="btn">إرسال الطلب</button>
-            </form>
-        </div>
-    </section>
-    
     <section id="gallery" class="container">
         <h2 class="section-title">معرض الصور</h2>
         <div class="gallery">
             <div class="gallery-item">
-                <img src="gallery1.jpg" alt="حلويات">
+                <img src="static/images/1.jpeg" alt="حلويات">
             </div>
             <div class="gallery-item">
-                <img src="gallery2.jpg" alt="حلويات">
+                <img src="static/images/2.jpeg" alt="حلويات">
             </div>
             <div class="gallery-item">
-                <img src="gallery3.jpg" alt="حلويات">
+                <img src="static/images/3.jpeg" alt="حلويات">
             </div>
             <div class="gallery-item">
-                <img src="gallery4.jpg" alt="حلويات">
+                <img src="static/images/4.jpg" alt="حلويات">
             </div>
             <div class="gallery-item">
-                <img src="gallery5.jpg" alt="حلويات">
+                <img src="static/images/5.jpeg" alt="حلويات">
             </div>
             <div class="gallery-item">
-                <img src="gallery6.jpg" alt="حلويات">
+                <img src="static/images/7.jpeg" alt="حلويات">
             </div>
             <div class="gallery-item">
-                <img src="gallery7.jpg" alt="حلويات">
+                <img src="static/images/8.jpeg" alt="حلويات">
             </div>
             <div class="gallery-item">
-                <img src="gallery8.jpg" alt="حلويات">
+                <img src="static/images/6.jpeg" alt="حلويات">
             </div>
         </div>
     </section>
     
-    <section id="testimonials" class="container">
-        <h2 class="section-title">شهادات العملاء</h2>
-        <div class="testimonials">
-            <div class="testimonial-card">
-                <p class="testimonial-text">"حلوياتكم رائعة! الطعم الأصيل والنظافة والجودة لا مثيل لها. دائمًا ما أطلب منكم في المناسبات العائلية."</p>
-                <p class="testimonial-author">- سارة ب.</p>
-            </div>
-            
-            <div class="testimonial-card">
-                <p class="testimonial-text">"أفضل حلويات جربتها في حياتي! النكهات التقليدية تذكرني بطفولتي. شكرًا على الحفاظ على الأصالة."</p>
-                <p class="testimonial-author">- محمد ت.</p>
-            </div>
-            
-            <div class="testimonial-card">
-                <p class="testimonial-text">"الخدمة ممتازة والتوصيل سريع. الحلويات وصلت طازجة ولذيذة كما وعدتم. بالتأكيد سأطلب مرة أخرى."</p>
-                <p class="testimonial-author">- أمينة ز.</p>
-            </div>
-        </div>
-    </section>
     <section id="contact" class="container">
         <h2 class="section-title">تواصل معنا</h2>
         <div class="contact-info">
             <div class="contact-card">
                 <h3>معلومات التواصل</h3>
-                <p>الهاتف:  </p>
                 <p>البريد الإلكتروني: info@halawiyatna.com</p>
-                <p>العنوان:p>
                 
                 <div class="social-links">
                     <a href="https://wa.me/213781648033"><i class="fab fa-whatsapp"></i></a>
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
-            </div>
-            
-            <div class="contact-card">
-                <h3>ساعات العمل</h3>
-                <p>الأحد إلى الخميس: 8 ص - 8 م</p>
-                <p>الجمعة والسبت: 10 ص - 10 م</p>
-                <p>نستقبل الطلبات 24/7 عبر الواتساب</p>
-                
-                <div class="btn" onclick="openOrderModal('طلب عام')" style="margin-top: 20px; cursor: pointer;">اطلب الآن</div>
             </div>
         </div>
     </section>
@@ -1590,41 +629,37 @@
             </div>
         </div>
     </div>
-    
-    <a href="https://wa.me/213781648033" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i> تواصل معنا عبر واتساب
-    </a>
-    
-    
-    <div class="style-toggle" id="styleToggle">
-        <i class="fas fa-palette"></i> أنماط
-    </div>
-    
-    <!-- Color Picker -->
-    <div class="color-picker" id="colorPicker">
-        <h3>اختر لونًا</h3>
-        <div class="color-options">
-            <div class="color-option" style="background-color: #d4a373;" onclick="changeTheme('default')" title="فاخر ذهبي تقليدي"></div>
-            <div class="color-option" style="background-color: #f06292;" onclick="changeTheme('pink')" title="عصري أنثوي"></div>
-            <div class="color-option" style="background-color: #ffb627;" onclick="changeTheme('ramadan')" title="رمضاني مميز"></div>
-            <div class="color-option" style="background-color: #a68a64;" onclick="changeTheme('neutral')" title="فاخر محايد"></div>
-            <div class="color-option" style="background-color: #6ec5d9;" onclick="changeTheme('fresh')" title="منعش نقي"></div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeVideoModal()">&times;</span>
+            <h2 class="section-title" id="videoModalTitle">فيديو تعليمي</h2>
+            <div class="video-container">
+                <video id="tutorialVideo" controls style="width:100%;">
+                    <source src="" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
         </div>
     </div>
     
-    <!-- Footer -->
+    <a href="https://wa.me/213781648033" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
     <footer>
         <div class="container">
             <div class="footer-logo">
-                <img src="A.png" alt="شعار حلوياتنا" class="footer-logo-img">
+                <img src="static/images/A.png" alt="شعار حلوياتنا" class="footer-logo-img">
                 حلوياتنا
             </div>
             <ul class="footer-links">
                 <li><a href="#home">الصفحة الرئيسية</a></li>
                 <li><a href="#about">حولنا</a></li>
                 <li><a href="#categories">الأصناف</a></li>
+                <li><a href="#weekly-specials">حلويات الأسبوع</a></li>
                 <li><a href="#gallery">معرض الصور</a></li>
-                <li><a href="#testimonials">شهادات العملاء</a></li>
                 <li><a href="#contact">تواصل معنا</a></li>
             </ul>
             <p class="copyright">© 2025 حلوياتنا. جميع الحقوق محفوظة.</p>
@@ -1635,378 +670,6 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js').then(registration => {
-                    console.log('ServiceWorker registration successful');
-                }).catch(err => {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-        }
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme) {
-            body.classList.add(currentTheme);
-            updateThemeIcon();
-        }
-        const savedColorTheme = localStorage.getItem('colorTheme');
-        if (savedColorTheme) {
-            body.classList.add(savedColorTheme + '-theme');
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark-mode' : '');
-            updateThemeIcon();
-        });
-        
-        function updateThemeIcon() {
-            const icon = themeToggle.querySelector('i');
-            if (body.classList.contains('dark-mode')) {
-                themeToggle.querySelector('span').textContent = 'الوضع النهاري';
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                themeToggle.querySelector('span').textContent = 'الوضع الليلي';
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        }
-        function changeTheme(theme) {
-            body.classList.remove('default-theme', 'pink-theme', 'ramadan-theme', 'neutral-theme', 'fresh-theme');
-            
-            if (theme !== 'default') {
-                body.classList.add(theme + '-theme');
-            }
-            
-            localStorage.setItem('colorTheme', theme);
-            document.getElementById('colorPicker').style.display = 'none';
-        }
-        const styleToggle = document.getElementById('styleToggle');
-        const colorPicker = document.getElementById('colorPicker');
-        
-        styleToggle.addEventListener('click', () => {
-            colorPicker.style.display = colorPicker.style.display === 'block' ? 'none' : 'block';
-        });
-        const sections = document.querySelectorAll('section');
-        
-        function checkVisibility() {
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (sectionTop < windowHeight - 100) {
-                    section.classList.add('visible');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', checkVisibility);
-        window.addEventListener('load', checkVisibility);
-        
-        const logoTexts = ["حلوياتنا", "أطيب حلويات", "بنكهة الأصالة", "لذة لا تقاوم"];
-        let currentLogoIndex = 0;
-        const dynamicLogo = document.getElementById('dynamicLogo');
-        
-        function changeLogoText() {
-            currentLogoIndex = (currentLogoIndex + 1) % logoTexts.length;
-            gsap.to(dynamicLogo, {
-                duration: 0.5,
-                opacity: 0,
-                y: -20,
-                onComplete: () => {
-                    dynamicLogo.textContent = logoTexts[currentLogoIndex];
-                    gsap.to(dynamicLogo, {
-                        duration: 0.5,
-                        opacity: 1,
-                        y: 0
-                    });
-                }
-            });
-        }
-        
-        setInterval(changeLogoText, 3000);
-        function updateOfferCounter() {
-            const now = new Date();
-            const endOfWeek = new Date();
-            endOfWeek.setDate(now.getDate() + (7 - now.getDay()));
-            endOfWeek.setHours(23, 59, 59, 0);
-            
-            const diff = endOfWeek - now;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('offerCounter').textContent = 
-                `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-        }
-        
-        setInterval(updateOfferCounter, 1000);
-        updateOfferCounter();
-        function showProducts(category) {
-            document.getElementById('categories').style.display = 'none';
-            document.getElementById(`${category}-products`).style.display = 'block';
-            window.scrollTo({ top: document.getElementById('productsContainer').offsetTop - 100, behavior: 'smooth' });
-        }
-        
-        function hideProducts() {
-            document.querySelectorAll('.product-section').forEach(section => {
-                section.style.display = 'none';
-            });
-            document.getElementById('categories').style.display = 'block';
-            window.scrollTo({ top: document.getElementById('categories').offsetTop - 100, behavior: 'smooth' });
-        }
-        function openOrderModal(product) {
-            const modal = document.getElementById('orderModal');
-            document.getElementById('modalProduct').value = product;
-            modal.style.display = 'block';
-        }
-        
-        function closeModal() {
-            document.getElementById('orderModal').style.display = 'none';
-        }
-        window.onclick = function(event) {
-            const modal = document.getElementById('orderModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-        function submitOrder(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const product = document.getElementById('product').value;
-            const quantity = document.getElementById('quantity').value;
-            const date = document.getElementById('date').value;
-            const notes = document.getElementById('notes').value;
-            const message = `طلب جديد من ${name}%0A%0Aرقم الهاتف: ${phone}%0Aنوع الحلويات: ${product}%0Aالكمية: ${quantity}%0Aتاريخ التوصيل: ${date}%0Aملاحظات: ${notes || 'لا يوجد'}`;
-            window.open(`https://wa.me/213781648033?text=${message}`, '_blank');
-            
-            e.target.reset();
-        }
-        
-        function submitModalOrder(e) {
-            e.preventDefault();
-            const name = document.getElementById('modalName').value;
-            const phone = document.getElementById('modalPhone').value;
-            const product = document.getElementById('modalProduct').value;
-            const quantity = document.getElementById('modalQuantity').value;
-            const date = document.getElementById('modalDate').value;
-            const notes = document.getElementById('modalNotes').value;
-            
-            const message = `طلب جديد من ${name}%0A%0Aرقم الهاتف: ${phone}%0Aنوع الحلويات: ${product}%0Aالكمية: ${quantity}%0Aتاريخ التوصيل: ${date}%0Aملاحظات: ${notes || 'لا يوجد'}`;
-            window.open(`https://wa.me/213781648033?text=${message}`, '_blank');
-            
-            e.target.reset();
-            closeModal();
-        }
-        
-        let draggedItem = null;
-        let totalPrice = 0;
-        
-        document.querySelectorAll('.builder-item').forEach(item => {
-            item.addEventListener('dragstart', function() {
-                draggedItem = this;
-                setTimeout(() => {
-                    this.style.opacity = '0.4';
-                }, 0);
-            });
-            
-            item.addEventListener('dragend', function() {
-                setTimeout(() => {
-                    this.style.opacity = '1';
-                    draggedItem = null;
-                }, 0);
-            });
-        });
-        
-        document.getElementById('builderPreview').addEventListener('dragover', function(e) {
-            e.preventDefault();
-            this.style.backgroundColor = 'rgba(212, 163, 115, 0.2)';
-        });
-        
-        document.getElementById('builderPreview').addEventListener('dragleave', function() {
-            this.style.backgroundColor = '';
-        });
-        
-        document.getElementById('builderPreview').addEventListener('drop', function(e) {
-            e.preventDefault();
-            this.style.backgroundColor = '';
-            
-            if (draggedItem) {
-                const itemName = draggedItem.textContent;
-                const itemPrice = parseInt(draggedItem.getAttribute('data-price'));
-                
-                const newItem = document.createElement('div');
-                newItem.className = 'builder-preview-item';
-                newItem.innerHTML = `
-                    ${itemName}
-                    <span class="remove-item" onclick="removeBuilderItem(this, ${itemPrice})">×</span>
-                `;
-                
-                this.appendChild(newItem);
-                totalPrice += itemPrice;
-                updateBuilderTotal();
-            }
-        });
-        
-        function removeBuilderItem(element, price) {
-            element.parentElement.remove();
-            totalPrice -= price;
-            updateBuilderTotal();
-        }
-        
-        function updateBuilderTotal() {
-            document.getElementById('builderTotal').textContent = totalPrice;
-        }
-        
-        function submitBuilderOrder() {
-            if (totalPrice === 0) {
-                alert('الرجاء إضافة عناصر إلى طلبك أولاً');
-                return;
-            }
-            
-            const items = [];
-            document.querySelectorAll('.builder-preview-item').forEach(item => {
-                items.push(item.textContent.trim().replace('×', ''));
-            });
-            
-            openOrderModal(items.join('، '));
-        }
-        
-        document.getElementById('greetingText').addEventListener('input', function() {
-            document.getElementById('greetingCardPreview').textContent = this.value || 'نص المعايدة سيظهر هنا';
-        });
-        
-        function saveGreetingCard() {
-            const greetingText = document.getElementById('greetingText').value;
-            if (!greetingText) {
-                alert('الرجاء إدخال نص المعايدة');
-                return;
-            }
-            
-            localStorage.setItem('greetingCard', greetingText);
-            alert('تم حفظ بطاقة المعايدة بنجاح! سيتم إرفاقها مع طلبك.');
-        }
-        let mediaRecorder;
-        let recordedChunks = [];
-        
-        document.getElementById('startRecording').addEventListener('click', async function() {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
-                const videoPreview = document.getElementById('videoPreview');
-                videoPreview.innerHTML = '';
-                
-                const video = document.createElement('video');
-                video.srcObject = stream;
-                video.autoplay = true;
-                video.muted = true;
-                video.style.width = '100%';
-                video.style.height = '100%';
-                videoPreview.appendChild(video);
-                
-                mediaRecorder = new MediaRecorder(stream);
-                mediaRecorder.ondataavailable = function(e) {
-                    if (e.data.size > 0) {
-                        recordedChunks.push(e.data);
-                    }
-                };
-                
-                mediaRecorder.onstop = function() {
-                    const videoBlob = new Blob(recordedChunks, { type: 'video/webm' });
-                    const videoUrl = URL.createObjectURL(videoBlob);
-                    
-                    videoPreview.innerHTML = '';
-                    const recordedVideo = document.createElement('video');
-                    recordedVideo.src = videoUrl;
-                    recordedVideo.controls = true;
-                    recordedVideo.style.width = '100%';
-                    recordedVideo.style.height = '100%';
-                    videoPreview.appendChild(recordedVideo);
-                    
-                    document.getElementById('sendVideo').style.display = 'inline-block';
-                };
-                
-                mediaRecorder.start();
-                this.textContent = 'إيقاف التسجيل';
-                this.onclick = stopRecording;
-            } catch (err) {
-                console.error('Error accessing media devices:', err);
-                alert('حدث خطأ في الوصول إلى الكاميرا أو الميكروفون. يرجى التحقق من الأذونات.');
-            }
-        });
-        
-        function stopRecording() {
-            mediaRecorder.stop();
-            document.getElementById('startRecording').textContent = 'سجّل طلبك صوت أو فيديو 🎥';
-            document.getElementById('startRecording').onclick = startRecording;
-            
-            mediaRecorder.stream.getTracks().forEach(track => track.stop());
-        }
-        
-        document.getElementById('sendVideo').addEventListener('click', function() {
-            alert('تم حفظ الفيديو بنجاح! سيتصل بكم فريقنا لتأكيد التفاصيل.');
-        });
-        
-        const aiResponses = {
-            "عرس": "تهانينا على العرس! ننصحك بـ 'سفرة العروس' التي تحتوي على تشكيلة متنوعة من الحلويات التقليدية والعصرية. كما يمكنك اختيار 'كعكة الزفاف' المخصصة بتصميم يناسب ذوقك.",
-            "مناسبة": "لدينا تشكيلة واسعة تناسب جميع المناسبات. هل يمكنك تحديد نوع المناسبة؟ (عرس، ميلاد، رمضان، إلخ)",
-            "أطفال": "لدينا قسم خاص بحلويات الأطفال يشمل كيك شخصيات كرتونية وكب كيك ملون بأشكال جذابة للأطفال.",
-            "رمضان": "في رمضان نقدم تشكيلة خاصة تشمل زلابية، قريوش، ومقروط. جميعها تحضر بمواد طبيعية وتناسب موائد رمضان.",
-            "سعر": "أسعارنا تتراوح بين 800 دج للكيلو للحلويات البسيطة وحتى 25000 دج لسفرة العروس الكاملة. يمكنك الاطلاع على الأسعار في صفحة الأصناف.",
-            "توصيل": "نقدم خدمة التوصيل مجانًا داخل المدينة للطلبات فوق 15000 دج. كما يمكنك استلام الطلب من محلتنا.",
-            "مكونات": "نستخدم فقط المكونات الطبيعية والطازجة في جميع حلوياتنا بدون أي مواد حافظة أو ألوان صناعية."
-        };
-        
-        function sendAiMessage() {
-            const input = document.getElementById('aiChatInput');
-            const message = input.value.trim();
-            
-            if (!message) return;
-            
-            const chatBox = document.getElementById('aiChatBox');
-            
-            const userMessage = document.createElement('div');
-            userMessage.className = 'user-message';
-            userMessage.textContent = message;
-            chatBox.appendChild(userMessage);
-            
-            input.value = '';
-            
-            chatBox.scrollTop = chatBox.scrollHeight;
-            
-            setTimeout(() => {
-                let response = "شكرًا لسؤالك. يمكنني مساعدتك في اختيار الحلويات المناسبة لأي مناسبة. هل لديك مناسبة معينة في الذهن؟";
-                
-                for (const keyword in aiResponses) {
-                    if (message.includes(keyword)) {
-                        response = aiResponses[keyword];
-                        break;
-                    }
-                }
-                const aiMessage = document.createElement('div');
-                aiMessage.className = 'ai-message';
-                aiMessage.textContent = response;
-                chatBox.appendChild(aiMessage);
-                
-                chatBox.scrollTop = chatBox.scrollHeight;
-            }, 1000);
-        }
-        
-        document.getElementById('aiChatInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                sendAiMessage();
-            }
-        });
-        
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('date').min = today;
-        document.getElementById('modalDate').min = today;
-    </script>
+    <script src="static/js/script.js"></script>
 </body>
 </html>
