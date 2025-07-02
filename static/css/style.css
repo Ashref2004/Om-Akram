@@ -5,7 +5,7 @@
     --primary-color: #f06292;
     --secondary-color: #c2185b;
     --text-color: #ffffff;
-    --bg-color: #121212;
+    --bg-color: #000000;
     --card-bg: #1e1e1e;
     --nav-bg: #1a1a1a;
     --footer-bg: #0a0a0a;
@@ -24,11 +24,10 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Dark mode specific styles */
 header {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                 url('https://images.unsplash.com/photo-1604329760661-e71dc83f8f26') no-repeat center center/cover;
-}
+} 
 
 section {
     background-color: var(--bg-color);
@@ -536,32 +535,42 @@ footer {
         
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* أعرض شوي */
+            gap: 20px;
+            padding: 20px;
         }
         
         .gallery-item {
-            height: 250px;
+            aspect-ratio: 4 / 3; /* يخلي كل العناصر بنفس النسبة */
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 12px;
             position: relative;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1);
+            background-color: #f8f8f8; /* لون خلفي خفيف قبل ما تتحمل الصورة */
         }
         
         .gallery-item:hover {
-            transform: scale(1.02);
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+            filter: brightness(1.02);
+            z-index: 2;
         }
         
         .gallery-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
+            object-fit: cover; /* ممكن تجرب contain إذا الصور فيها عناصر تتقص */
+            object-position: center;
+            transition: transform 0.5s ease, filter 0.3s ease;
+            border-radius: 12px;
         }
         
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
+        
         
         .video-order-container {
             background-color: var(--card-bg);
@@ -637,20 +646,7 @@ footer {
             float: left;
             clear: both;
         }
-        
-        .ai-chat-input {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .ai-chat-input input {
-            flex: 1;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            font-size: 1rem;
-        }
-        
+
         .fomo-banner {
             background: linear-gradient(45deg, #ff4d4d, #f9cb28);
             color: white;
