@@ -29,7 +29,7 @@ open 11.html
 
 ## 📂 File Structure
 
-- `11.html`: Main website file (everything in one file)
+- `index.html`: Main website file (everything in one file)
 - `static/images/`: All required images
 - `static/js/script.js`: Interactions and modal logic
 - `static/css/style.css`: Optional if separated
