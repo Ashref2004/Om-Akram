@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         navLinks.classList.toggle('active');
     });
     
-    // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -16,18 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Dark mode toggle
     const toggleDarkMode = () => {
         document.body.classList.toggle('dark-mode');
         localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     };
     
-    // Initialize dark mode
     if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
     }
     
-    // Add dark mode toggle button
     const darkModeToggle = document.createElement('button');
     darkModeToggle.id = 'darkModeToggle';
     darkModeToggle.className = 'dark-mode-toggle';
@@ -35,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     darkModeToggle.addEventListener('click', toggleDarkMode);
     document.body.appendChild(darkModeToggle);
     
-    // Section visibility
     const sections = document.querySelectorAll('section');
     
     function checkVisibility() {
@@ -52,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkVisibility);
     window.addEventListener('load', checkVisibility);
     
-    // Dynamic logo text
     const logoTexts = ["حلوياتنا", "أطيب حلويات", "بنكهة الأصالة", "لذة لا تقاوم"];
     let currentLogoIndex = 0;
     const dynamicLogo = document.getElementById('dynamicLogo');
@@ -76,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setInterval(changeLogoText, 3000);
     
-    // Offer counter
     function updateOfferCounter() {
         const now = new Date();
         const endOfWeek = new Date();
@@ -97,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateOfferCounter, 1000);
     updateOfferCounter();
     
-    // Product category functions
     window.showProducts = function(category) {
         document.getElementById('categories').style.display = 'none';
         document.getElementById(`${category}-products`).style.display = 'block';
@@ -112,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: document.getElementById('categories').offsetTop - 100, behavior: 'smooth' });
     };
     
-    // Modal functions
     window.openOrderModal = function(product) {
         const modal = document.getElementById('orderModal');
         document.getElementById('modalProduct').value = product;
@@ -133,22 +124,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const date = document.getElementById('modalDate').value;
         const notes = document.getElementById('modalNotes').value;
         
-        // Calculate loyalty points (10 points per 1000 DZD)
         const pointsToAdd = Math.floor(parseInt(quantity) * 10);
         addLoyaltyPoints(pointsToAdd);
         
-        // Format WhatsApp message
         const message = `طلب جديد من ${name}%0A%0Aرقم الهاتف: ${phone}%0Aالعنوان: ${address}%0Aنوع الحلويات: ${product}%0Aالكمية: ${quantity}%0Aتاريخ التوصيل: ${date}%0Aملاحظات: ${notes || 'لا يوجد'}`;
         
-        // Open WhatsApp with pre-filled message
         window.open(`https://wa.me/213781648033?text=${encodeURIComponent(message)}`, '_blank');
         
-        // Reset form
         e.target.reset();
         closeModal();
     };
     
-    // Loyalty Program Functions
     function getLoyaltyPoints() {
         return parseInt(localStorage.getItem('loyaltyPoints')) || 0;
     }
@@ -184,10 +170,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Initialize loyalty display
     updateLoyaltyDisplay();
     
-    // Close modal when clicking outside
     window.onclick = function(event) {
         const modal = document.getElementById('orderModal');
         if (event.target == modal) {
@@ -195,7 +179,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
     
-    // Service Worker Registration
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('sw.js').then(registration => {
@@ -206,7 +189,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Lazy loading images
     document.addEventListener('DOMContentLoaded', function() {
         const lazyImages = [].slice.call(document.querySelectorAll('img[loading="lazy"]'));
         
@@ -228,7 +210,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Set min date for order date picker
     const today = new Date().toISOString().split('T')[0];
     if (document.getElementById('modalDate')) {
         document.getElementById('modalDate').min = today;
