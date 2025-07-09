@@ -51,18 +51,18 @@ open index.html
 ```
 📁 sokor-website
 ├── 📄 index.html
-└── 📁 static
-    ├── 📁 css
-    │   └── style.css
-    ├── 📁 images
-    │   └── [All product & UI images]
-    ├── 📁 images-2
-    │   ├── about.png
-    │   ├── forms.png
-    │   ├── gallery.png
-    │   └── type.png
-    └── 📁 js
-        └── script.js
+├── 📁 images
+│   ├── 1.jpeg, 1.1.jpeg, 2.jpeg, 2.1.jpeg, ..., zelabya.jpeg
+├── 📁 static
+│   ├── 📁 css
+│   │   └── style.css
+│   ├── 📁 images-2
+│   │   ├── about.png
+│   │   ├── forms.png
+│   │   ├── gallery.png
+│   │   └── type.png
+│   └── 📁 js
+│       └── script.js
 
 ```
 
@@ -142,18 +142,18 @@ open index.html
 ```
 📁 sokor-website
 ├── 📄 index.html
-└── 📁 static
-    ├── 📁 css
-    │   └── style.css
-    ├── 📁 images
-    │   └── [All product & UI images]
-    ├── 📁 images-2
-    │   ├── about.png
-    │   ├── forms.png
-    │   ├── gallery.png
-    │   └── type.png
-    └── 📁 js
-        └── script.js
+├── 📁 images
+│   ├── 1.jpeg, 1.1.jpeg, 2.jpeg, 2.1.jpeg, ..., zelabya.jpeg
+├── 📁 static
+│   ├── 📁 css
+│   │   └── style.css
+│   ├── 📁 images-2
+│   │   ├── about.png
+│   │   ├── forms.png
+│   │   ├── gallery.png
+│   │   └── type.png
+│   └── 📁 js
+│       └── script.js
 
 ```
 
