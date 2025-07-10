@@ -41,7 +41,6 @@ header {
                 url('https://images.unsplash.com/photo-1604329760661-e71dc83f8f26') no-repeat center center/cover;
 } 
 
-/* Dark Mode Toggle Button */
 .dark-mode-toggle {
     position: fixed;
     bottom: 100px;
@@ -62,7 +61,6 @@ header {
     color: white;
 }
 
-/* Hamburger Menu */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -90,12 +88,10 @@ header {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Menu */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
     }
-    /* Hamburger Menu */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -123,7 +119,6 @@ header {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Menu */
 @media (max-width: 768px) {
     .hamburger {
         display: block;
@@ -1302,7 +1297,6 @@ footer {
     }
 }
 
-/* Lazy Loading */
 img[loading="lazy"] {
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -1312,7 +1306,6 @@ img[loading="lazy"].loaded {
     opacity: 1;
 }
 
-/* Back to Top Button */
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -1337,7 +1330,6 @@ img[loading="lazy"].loaded {
     transform: translateY(-3px);
 }
 
-/* Welcome Popup */
 .welcome-popup {
     display: none;
     position: fixed;
@@ -1369,7 +1361,6 @@ img[loading="lazy"].loaded {
     cursor: pointer;
 }
 
-/* Enhanced Hover Effects */
 .product-card:hover {
     transform: translateY(-10px) rotate(2deg);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
